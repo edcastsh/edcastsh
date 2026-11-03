@@ -1,6 +1,6 @@
 <div align="center">
 
-# Hey, I'm Ed Castillo 👋
+# Hey, I'm Erick Beltran 👋
 
 ### Software Engineer · React · React Native · TypeScript
 
