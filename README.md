@@ -4,6 +4,8 @@
 
 ### Software Engineer · React · React Native · TypeScript
 
+**Former Amazon Pay Engineering Contributor**
+
 Building reliable web and mobile applications with a focus on maintainable architecture and great developer experience.
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-181717?style=for-the-badge&logo=vercel&logoColor=white)](https://edcastsh.vercel.app)
@@ -19,7 +21,8 @@ Building reliable web and mobile applications with a focus on maintainable archi
 I'm a software engineer based in Mexico with **4+ years of experience** building and maintaining production web and mobile applications with **React, React Native, TypeScript, JavaScript, and Node.js**.
 
 - 🧩 I focus on **reusable component systems, frontend architecture, and maintainable code**.
-- 📱 I've contributed to **React Native libraries and applications**, including engineering work involving **Amazon Pay**.
+- 📱 Contributed to **Amazon Pay engineering initiatives**, including shared React Native component libraries used across approximately 20 repositories.
+- 🧪 Helped improve automated test coverage from **60% to 92%** on a React Native project.
 - 🧪 I care about **automated testing, CI/CD, and reliable releases**.
 - 🤝 I combine hands-on engineering with **technical leadership, code reviews, and cross-functional delivery**.
 
