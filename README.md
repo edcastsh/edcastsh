@@ -55,9 +55,11 @@ Also experienced with **React Native, Expo, Zustand, Redux Saga, REST APIs, and 
 
 <div align="center">
 
-![GitHub stats](https://github-readme-stats.vercel.app/api?username=edcastsh&show_icons=true&hide_border=true&theme=github_dark)
+![GitHub profile activity](./profile-summary-card-output/github_dark/0-profile-details.svg)
 
-![Top languages](https://github-readme-stats.vercel.app/api/top-langs/?username=edcastsh&layout=compact&hide_border=true&theme=github_dark)
+![Languages by repository](./profile-summary-card-output/github_dark/1-repos-per-language.svg)
+
+![Languages by commits](./profile-summary-card-output/github_dark/2-most-commit-language.svg)
 
 </div>
 
