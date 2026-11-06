@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
   group: profile-summary-cards
@@ -22,8 +23,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-        with:
-          persist-credentials: true
 
       - name: Generate profile summary cards
         uses: vn7n24fzkq/github-profile-summary-cards@release
@@ -35,29 +34,17 @@ jobs:
           TIME_ZONE: America/Mazatlan
           AUTO_PUSH: false
 
-      - name: Commit and push generated cards
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add profile-summary-card-output/
-          if git diff --cached --quiet; then
-            echo "No profile card changes to commit."
-            exit 0
-          fi
-          git commit -m "chore: update GitHub profile summary cards"
-          for attempt in 1 2 3; do
-            git fetch origin main
-            git rebase origin/main
-            if git push origin HEAD:main; then
-              echo "Profile cards pushed successfully."
-              exit 0
-            fi
-            if [ "$attempt" -lt 3 ]; then
-              echo "Push failed; retrying after fetching main (attempt $attempt/3)." >&2
-              sleep 2
-            fi
-          done
-          echo "Unable to push profile cards after 3 attempts." >&2
-          exit 1
+      - name: Open or update profile cards pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: update GitHub profile summary cards"
+          branch: automation/update-profile-cards
+          base: main
+          delete-branch: true
+          add-paths: |
+            profile-summary-card-output/**
+          title: "chore: update GitHub profile summary cards"
+          body: |
+            Automated daily refresh of GitHub profile summary cards.
+            This PR is required because the main branch does not allow direct pushes.
